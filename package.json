@@ -1,0 +1,45 @@
+{
+	"name": "ClienteTaringa",
+	"version": "1.0.0",
+	"description": "Prueba de instalador para taringa",
+	"main": "./main.js",
+	"scripts": {
+		"start": "electron .",
+		"pack": "electron-builder --dir",
+		"dist": "electron-builder"
+	},
+	"author": "22matutex22 <22matutex22@holamundo.com.ar>",
+	"license": "ISC",
+	"build": {
+		"appId": "hello-world-instaladorv1",
+		"asar": true,
+		"dmg": {
+			"contents": [
+				{
+					"x": 110,
+					"y": 150
+				},
+				{
+					"x": 240,
+					"y": 150,
+					"type": "link",
+					"path": "/Applications"
+				}
+			]
+		},
+		"linux": {
+			"target": [
+				"AppImage",
+				"deb"
+			]
+		},
+		"win": {
+			"target": "NSIS",
+			"icon": "build/icon.ico"
+		}
+	},
+	"devDependencies": {
+		"electron": "^9.0.0",
+		"electron-builder": "^22.6.1"
+	}
+}
